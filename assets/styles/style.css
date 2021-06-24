@@ -3,7 +3,12 @@
     padding: 0px;
 }
 /* Global */
-
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.pd_top {
+    padding-top: 100px;
+}
 /* Images */
 
 /* Logos */
@@ -14,3 +19,39 @@
 }
 
 /* Nav-bar */
+
+/* Section Parallax */
+.header_parallax {
+    background-image: url('../images/bg_parallax.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    background-attachment: scroll;
+}
+.header_parallax h2 {
+    margin-top:50px;
+    font-size: 30px;
+    line-height: 1.5em;
+    font-weight: bold;
+}
+.header_parallax a {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 560px) {
+    .header_parallax {
+        height: 300px;
+    }
+    .header_parallax h2 {
+        margin-top:30px;
+        font-size: 20px;
+    }
+    .header_parallax a {
+        margin-top: 20px;
+        font-size: 12px;
+    }
+}
