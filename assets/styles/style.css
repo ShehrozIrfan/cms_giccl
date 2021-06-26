@@ -9,6 +9,9 @@ body {
 .pd_top {
     padding-top: 100px;
 }
+.clear {
+    clear: both;
+}
 /* Images */
 
 /* Logos */
@@ -96,6 +99,42 @@ body {
     text-decoration: none;
 }
 
+/* main footer */
+#main_footer .row div {
+    /* border: 2px solid coral; */
+}
+.f_ms_links ul a {
+    text-decoration: none;
+    color: black;
+}
+.f_ms_links ul a:hover {
+   opacity: 0.8;
+}
+
+/* main footer */
+#main_footer {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+/* Simple Footer */
+.simple_footer {
+    padding: 10px;
+    float:left;
+}
+.f_icons span a {
+    text-decoration: none;
+}
+.f_icons {
+    float: right;
+    margin-top: 8px;
+}
+.f_icons span {
+    padding: 0px 8px 0px 8px;
+}
+.f_icons span img:hover {
+    opacity: 0.8;
+}
 
 /* Media Queries - for mobile responsive */
 @media (max-width: 768px) {
@@ -104,6 +143,9 @@ body {
     }
     #ms_boxes h2 {
         font-size: 22px;
+    }
+    #main_footer .row div {
+        margin: 5px;
     }
 }
 
@@ -126,6 +168,15 @@ body {
     }
     .ms_box_container .ms_box{
         float: none;
+    }
+    .simple_footer,.f_icons {
+        float: none;
+    }
+    .f_icons {
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
     
 }
