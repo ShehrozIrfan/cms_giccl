@@ -78,19 +78,19 @@ body {
 /* Media Queries - for mobile responsive */
 @media (max-width: 768px) {
     .box_ms h4 {
-        font-size: 20px;
+        font-size: 18px;
     }
     #ms_boxes h1 {
-        font-size: 25px;
+        font-size: 22px;
     }
 }
 
 @media (max-width: 560px) {
     .header_parallax {
-        height: 300px;
+        height: 350px;
     }
     .header_parallax h2 {
-        font-size: 20px;
+        font-size: 25px;
     }
     .header_parallax a {
         margin-top: 10px;
@@ -105,4 +105,5 @@ body {
     .ms_box_container .ms_box{
         float: none;
     }
+    
 }
