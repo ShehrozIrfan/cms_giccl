@@ -31,13 +31,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-   
 }
 
 .header_parallax h2 {
     font-size: 35px;
     line-height: 1.5em;
     font-weight: bold;
+    color: white;
 }
 .header_parallax a {
     margin-top: 20px;
@@ -46,17 +46,34 @@ body {
 }
 
 /* Section MS */
-#ms_boxes h1 {
-    padding-top: 20px;
+#ms_boxes {
+    background: #f9f9f9;
+    background-attachment: fixed;
+}
+#ms_boxes h2 {
+    padding-top: 30px;
     padding-bottom: 20px;
+    font-weight: bold;
 }
 .ms_img_1 {
-    background-image: url('../images/img_ms.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 10px;
+    background-image: url('../images/accounts.png'); 
 }
-.ms_img_1:hover {
+.ms_img_2 {
+    background-image: url('../images/admission.png'); 
+}
+.ms_img_3 {
+    background-image: url('../images/attendance.png'); 
+}
+.ms_img_4 {
+    background-image: url('../images/exam.png'); 
+}
+.ms_img_5 {
+    background-image: url('../images/hostel.png'); 
+}
+
+
+
+.ms_img_1:hover,.ms_img_2:hover,.ms_img_3:hover,.ms_img_4:hover,.ms_img_5:hover {
     opacity: 0.5;
 }
 .row_ms .box_ms {
@@ -66,6 +83,9 @@ body {
 }
 .ms_img_div {
     height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
 }
 .box_ms h4 {
     font-size: 18px;
@@ -75,19 +95,21 @@ body {
     color: black;
     text-decoration: none;
 }
+
+
 /* Media Queries - for mobile responsive */
 @media (max-width: 768px) {
     .box_ms h4 {
         font-size: 18px;
     }
-    #ms_boxes h1 {
+    #ms_boxes h2 {
         font-size: 22px;
     }
 }
 
 @media (max-width: 560px) {
     .header_parallax {
-        height: 350px;
+        height: 450px;
     }
     .header_parallax h2 {
         font-size: 25px;
