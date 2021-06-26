@@ -25,21 +25,64 @@ body {
     background-image: url('../images/bg_parallax.jpg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 500px;
-    background-attachment: scroll;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }
+
 .header_parallax h2 {
-    margin-top:50px;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 1.5em;
     font-weight: bold;
 }
 .header_parallax a {
-    margin-top: 40px;
+    margin-top: 20px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
 }
 
+/* Section MS */
+#ms_boxes h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.ms_img_1 {
+    background-image: url('../images/img_ms.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.ms_img_1:hover {
+    opacity: 0.5;
+}
+.row_ms .box_ms {
+    /* border: 2px solid coral; */
+    max-height: 250px;
+    margin-bottom: 30px;
+}
+.ms_img_div {
+    height: 200px;
+}
+.box_ms h4 {
+    font-size: 18px;
+    padding-top: 5px;
+}
+.box_ms a {
+    color: black;
+    text-decoration: none;
+}
+/* Media Queries - for mobile responsive */
 @media (max-width: 768px) {
-    
+    .box_ms h4 {
+        font-size: 20px;
+    }
+    #ms_boxes h1 {
+        font-size: 25px;
+    }
 }
 
 @media (max-width: 560px) {
@@ -47,11 +90,19 @@ body {
         height: 300px;
     }
     .header_parallax h2 {
-        margin-top:30px;
         font-size: 20px;
     }
     .header_parallax a {
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 12px;
+        padding: 5px 15px 5px 15px;
+    } 
+    .ms_box {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ms_box_container .ms_box{
+        float: none;
     }
 }
