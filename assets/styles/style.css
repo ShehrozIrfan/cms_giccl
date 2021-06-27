@@ -220,9 +220,10 @@ body {
     .box_ms h4 {
         font-size: 18px;
     }
-    #ms_boxes h2 {
+    #ms_boxes h2, #s_news h2 {
         font-size: 22px;
     }
+
     #main_footer .row div {
         margin: 5px;
     }
@@ -251,6 +252,7 @@ body {
     .ms_box_container .ms_box{
         float: none;
     }
+    
     .simple_footer,.f_icons {
         float: none;
     }
