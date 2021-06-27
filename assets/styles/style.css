@@ -25,7 +25,7 @@ body {
 
 /* Section Parallax */
 .header_parallax {
-    background-image: url('../images/bg_parallax.jpg');
+    background-image: url('../images/bg_parallax_4.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,8 +34,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    
+    
 
+}
 .header_parallax h2 {
     font-size: 35px;
     line-height: 1.5em;
@@ -49,6 +51,41 @@ body {
 }
 
 /* Section MS */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease-in;
+    background-color: #343a40; /* #b05857  */
+  }
+  
+  .b_1:hover .overlay {
+    opacity: 1;
+    border-radius: 10px;
+  }
+  .overlay h4  a {
+      text-decoration: none;
+      color: white;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
 #ms_boxes {
     background: #f9f9f9;
     background-attachment: fixed;
@@ -118,9 +155,14 @@ body {
 }
 
 /* Simple Footer */
+.s_f {
+    background: #343a40;
+    color: white;
+}
 .simple_footer {
     padding: 10px;
     float:left;
+    font-size: 15px;
 }
 .f_icons span a {
     text-decoration: none;
