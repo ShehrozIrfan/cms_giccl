@@ -35,8 +35,8 @@ body {
 /* Section Parallax */
 
 .header_parallax {
-    background-image: url('../images/bg_parallax_4.jpg');
-    height: 500px;
+    background-image: url('../images/bg_parallax_final.jpg');
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -236,13 +236,21 @@ body {
     padding-bottom: 5px;
 }
 
+/* ===================================================== */
+/* ================ Contact PAGE ========================= */
+#contact {}
+.contact_text {
+    margin-top: 30px;
+    font-size: 15px;
+}
+
 
 /* Media Queries - for mobile responsive */
 @media (max-width: 768px) {
     .box_ms h4 {
         font-size: 18px;
     }
-    #ms_boxes h2, #s_news h2, #about h2 {
+    #ms_boxes h2, #s_news h2, #about h2, #contact h2 {
         font-size: 22px;
     }
     #about h3 {
