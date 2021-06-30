@@ -15,45 +15,7 @@
 </head>
 <body>
     <!-- header -->
-    <header>
-        <!-- nav-bar -->
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/main_logo.jpeg" id="main_logo" ></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item mr-5">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown mr-5">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Management
-                    </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Accounts Management</a>
-                    <a class="dropdown-item" href="#">Admission Management</a>
-                    <a class="dropdown-item" href="#">Attendance Management</a>
-                    <a class="dropdown-item" href="#">Examination Management</a>
-                    <a class="dropdown-item" href="#">Hostel Management</a>
-                    </div>
-                </li><!-- Dropdown ends -->
-                <li class="nav-item mr-5">
-                  <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item mr-5">
-                  <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item mr-5">
-                  <a class="nav-link" href="login.html">Login</a>
-                </li>    
-              </ul>
-            </div>  
-          </nav><!-- navbar ends -->
-    </header><!-- header ends -->
-
+    <?php include 'header.php' ?> <!-- header ends -->
     <!-- section parallax -->
     <section>
         <div class="header_parallax parallax pd_top text-center">
@@ -150,67 +112,7 @@
     </section><!-- section news ends -->
 
 
-    <!-- main footer-->
-    <section id="main_footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="f_ms_links">
-              <ul class="list-group">
-                <li class="list-group-item text-center font-weight-bold">Main Links</li>
-                <li class="list-group-item text-center"><a href="#">Accounts Management</a></li>
-                <li class="list-group-item text-center"><a href="#">Admission Management</a></li>
-                <li class="list-group-item text-center"><a href="#">Attendance Management</a></li>
-                <li class="list-group-item text-center"><a href="#">Examination Management</a></li>
-                <li class="list-group-item text-center"><a href="#">Hostel Management</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="f_ms_links">
-              <ul class="list-group">
-                <li class="list-group-item text-center font-weight-bold">Important Links</li>
-                <li class="list-group-item text-center"><a href="http://www.pu.edu.pk/">PU</a></li>
-                <li class="list-group-item text-center"><a href="http://www.biselahore.com/">BISE Lahore</a></li>
-                <li class="list-group-item text-center"><a href="https://www.hec.gov.pk/english/pages/home.aspx">HEC</a></li>
-                <li class="list-group-item text-center"><a href="https://pitb.gov.pk/">PITB</a></li>
-                <li class="list-group-item text-center"><a href="https://giccl.edu.pk/">GICCL</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- main footer ends -->
-
-    <!-- simple footer -->
- 
-    <footer class="s_f">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="text-center simple_footer">GICCL &copy; 2021 - All Rights Reserved</div>
-            <div class="f_icons">
-              <span>
-                <a href="#">
-                  <img src="assets/images/twitter.png">
-                </a>
-              </span>
-              <span>
-                <a href="#">
-                  <img src="assets/images/facebook.png">
-                </a>
-              </span>
-              <span>
-                <a href="#">
-                  <img src="assets/images/instagram.png">
-                </a>
-              </span>
-            </div>
-            <div class="clear"></div>
-          </div>
-          </div>
-      </div>
-    </footer><!-- simple footer ends -->
-
+    <!-- footer -->
+    <?php include 'footer.php' ?><!-- footer ends -->
 </body>
 </html>

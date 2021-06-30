@@ -230,7 +230,7 @@ body {
 /* ===================================================== */
 /* ================ ABOUT PAGE ========================= */
 .img_college {
-    background-image: url('../images/college_1.png');
+    background-image: url('../images/college.png');
     min-height: 100vh;
 }
 #about {
