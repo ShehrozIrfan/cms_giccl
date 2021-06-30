@@ -178,6 +178,12 @@ body {
     display: block;
 }
 /* main footer */
+#main_footer {
+    background: #343a40;
+    font-size: 12px;
+    padding-top: 20px;
+    color: white;
+}
 #main_footer .row div {
     /* border: 2px solid coral; */
 }
@@ -188,13 +194,13 @@ body {
 .f_ms_links ul a:hover {
    opacity: 0.8;
 }
-
-/* main footer */
-#main_footer {
-    font-size: 12px;
-    margin-top: 20px;
+#main_footer .list-group-item {
+    background: #343a40;
+    border: 1px solid white;
 }
-
+#main_footer .list-group-item a {
+    color: white;
+}
 /* Simple Footer */
 .s_f {
     background: #343a40;
