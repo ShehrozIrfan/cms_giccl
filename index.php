@@ -16,6 +16,12 @@
 <body>
     <!-- header -->
     <?php include 'header.php' ?> <!-- header ends -->
+    <?php 
+      if (isset($_SESSION['flash'])) {
+        echo $_SESSION['flash'];
+        unset($_SESSION['flash']);
+     }
+    ?>
     <!-- section parallax -->
     <section>
         <div class="header_parallax parallax pd_top text-center">

@@ -1,3 +1,37 @@
+<?php
+   include("connection.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $username = mysqli_real_escape_string($connection,$_POST['username']);
+    //   $password = md5(filter_var($_POST["password"], FILTER_SANITIZE_STRING));
+      $password = mysqli_real_escape_string($connection,$_POST['password']); 
+      
+      $query = "SELECT login_id FROM login WHERE username = '$username' and password = '$password'";
+
+      $result = mysqli_query($connection,$query);
+
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      
+    //   $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+        //  session_register("username");
+         $_SESSION['login_user'] = $username;
+         
+         header("location: dashboard.php");
+      } else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,17 +58,27 @@
             <h2 class="text-center font-weight-bold">Admin Login</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form action="" method="post">
+                    <form action="login.php" method="post">
+                        <?php 
+                            if(isset($_SESSION["errorMessage"])) {
+                        ?>
+                        <div class="error-message">
+                            <?php  echo $_SESSION["errorMessage"]; ?>
+                        </div>
+                        <?php 
+                            unset($_SESSION["errorMessage"]);
+                            } 
+                        ?>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter Userame" required>
+                            <input type="text" name="username" class="form-control" id="username" placeholder="Enter Userame" required>
                           </div>
                         <div class="form-group">
                           <label for="password">Password</label>
-                          <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                          <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required>
                         </div>
                         <div class="form-group">
-                        <button type="submit" class="btn btn-dark">Login</button>
+                        <button type="submit" name="login" class="btn btn-dark">Login</button>
                       </form>
                 </div>
             </div>
