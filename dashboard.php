@@ -1,3 +1,5 @@
+<?php include('session.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +19,6 @@
     <!-- header -->
     <?php include 'header.php' ?> <!-- header ends -->
     <div class="pd_top"></div>
-    <?php
-        include('session.php');
-    ?>
     <div class="container">
         <h1>Welcome <?php echo $login_session; ?></h1> 
         <h2><a href = "logout.php">Sign Out</a></h2>

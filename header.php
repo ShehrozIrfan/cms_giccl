@@ -1,6 +1,3 @@
-<?php include 'session.php' ?>
-<?php include 'login.php' ?>
-<?php include 'logout.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,10 +42,10 @@
                   <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item mr-5">
-                  <?php  if(isset($_SESSION['login_user'])) { ?>
-                    <a class="nav-link" href="login.php">Logout</a>  
+                  <?php  if(!isset($_SESSION['login_user'])) { ?>
+                    <a class="nav-link" href="login.php">Login</a>  
                   <?php } else {  ?>
-                  <a class="nav-link" href="logout.php">Login</a>
+                  <a class="nav-link" href="logout.php">Logout</a>
                   <?php } ?>
                   
                 </li>    

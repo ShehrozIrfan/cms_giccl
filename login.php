@@ -7,7 +7,7 @@
       
       $username = mysqli_real_escape_string($connection,$_POST['username']);
     //   $password = md5(filter_var($_POST["password"], FILTER_SANITIZE_STRING));
-      $password = mysqli_real_escape_string($connection,$_POST['password']); 
+    $password = md5(mysqli_real_escape_string($connection,$_POST['password'])); 
       
       $query = "SELECT login_id FROM login WHERE username = '$username' and password = '$password'";
 
@@ -56,6 +56,11 @@
     <section id="contact" class="pd_top">
         <div class="container">
             <h2 class="text-center font-weight-bold">Admin Login</h2>
+            <?php if (isset($_SESSION['message'])) { ?>
+                <div class="alert alert-danger">
+                    <?php echo $_SESSION['message']; ?>
+                </div>
+            <?php } ?>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="login.php" method="post">

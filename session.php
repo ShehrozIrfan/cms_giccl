@@ -11,7 +11,9 @@
    $login_session = $row['username'];
    
    if(!isset($_SESSION['login_user'])){
-      header("location:login.php");
+      $_SESSION['message'] = "Invalid Username/Password combination";
+      header("location: login.php");
       die();
+      exit();
    }
 ?>
