@@ -24,10 +24,10 @@
       if($count == 1) {
         //  session_register("username");
          $_SESSION['login_user'] = $username;
-         
+         $_SESSION['success_message'] = "Welcome to CMS - GICCL";
          header("location: dashboard.php");
       } else {
-         $error = "Your Login Name or Password is invalid";
+         $_SESSION['error_message'] = "Invalid Email or Password combination";
       }
    }
 ?>
@@ -56,24 +56,17 @@
     <section id="contact" class="pd_top">
         <div class="container">
             <h2 class="text-center font-weight-bold">Admin Login</h2>
-            <?php if (isset($_SESSION['message'])) { ?>
-                <div class="alert alert-danger">
-                    <?php echo $_SESSION['message']; ?>
+            <?php if (isset($_SESSION['error_message'])) { ?>
+                <div class="alert alert-danger text-center col-md-6 mx-auto mt-3 mb-3">
+                    <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                        ×
+                    </button>
+                    <?php echo $_SESSION['error_message']; ?>
                 </div>
             <?php } ?>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="login.php" method="post">
-                        <?php 
-                            if(isset($_SESSION["errorMessage"])) {
-                        ?>
-                        <div class="error-message">
-                            <?php  echo $_SESSION["errorMessage"]; ?>
-                        </div>
-                        <?php 
-                            unset($_SESSION["errorMessage"]);
-                            } 
-                        ?>
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" name="username" class="form-control" id="username" placeholder="Enter Userame" required>

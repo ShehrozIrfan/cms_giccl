@@ -20,8 +20,15 @@
     <?php include 'header.php' ?> <!-- header ends -->
     <div class="pd_top"></div>
     <div class="container">
-        <h1>Welcome <?php echo $login_session; ?></h1> 
-        <h2><a href = "logout.php">Sign Out</a></h2>
+    <?php if (isset($_SESSION['success_message'])) { ?>
+        <div class="alert alert-success text-center mx-auto font-weight-bold alert-dismissible mt-3 mb-3" role="alert">
+            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                ×
+            </button>
+            <?php echo $_SESSION['success_message']; ?>
+        </div>
+    <?php } ?>
+    <h1>Welcome <?php echo $login_session; ?></h1> 
     </div>
       
     
