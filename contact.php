@@ -21,7 +21,7 @@
     <!-- contact section -->
     <section id="contact" class="pd_top">
         <div class="container">
-            <h2 class="text-center font-weight-bold">Get In Touch</h2>
+            <h2 class="text-center font-weight-bold mt-3 mb-3">Get In Touch</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="" method="post">

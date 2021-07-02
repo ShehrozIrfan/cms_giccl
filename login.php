@@ -57,7 +57,7 @@
     <!-- contact section -->
     <section id="contact" class="pd_top">
         <div class="container">
-            <h2 class="text-center font-weight-bold">Admin Login</h2>
+            <h2 class="text-center font-weight-bold mt-3 mb-3">Admin Login</h2>
             <?php if (isset($_SESSION['error_message'])) { ?>
                 <div class="alert alert-danger text-center col-md-6 mx-auto mt-3 mb-3">
                     <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">

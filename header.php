@@ -41,14 +41,23 @@
                 <li class="nav-item mr-5">
                   <a class="nav-link" href="contact.php">Contact</a>
                 </li>
-                <li class="nav-item mr-5">
+                
                   <?php  if(!isset($_SESSION['login_user'])) { ?>
+                    <li class="nav-item mr-5">
                     <a class="nav-link" href="login.php">Login</a>  
+                    </li>
                   <?php } else {  ?>
-                  <a class="nav-link" href="logout.php">Logout</a>
+                    <li class="nav-item dropdown mr-5">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Settings
+                    </a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="logout.php">Logout</a>
+                    </div>
+                    </li><!-- Dropdown ends -->
                   <?php } ?>
-                  
-                </li>    
+                     
               </ul>
             </div>  
           </nav><!-- navbar ends -->
