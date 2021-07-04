@@ -1,78 +1,43 @@
 <?php include 'session.php' ?>
 <?php
-//    include("connection.php");
-//    session_start();
-   
    $msg = '';
    $msgClass = '';
-    echo "Outside";
    if(isset($_POST['update'])) {
-      // username and password sent from form 
-
-      echo "workking";
-      
-    $username = mysqli_real_escape_string($connection,$_POST['username']);
-    //   $password = md5(filter_var($_POST["password"], FILTER_SANITIZE_STRING));
-    $password = $_POST['password']; 
-      
-    
-    $password_confirmation = $_POST['confirm_password'];
-
-    if(trim($username) == '') {
-        $msg = "Username can't be blank!";
-        $msgClass = "danger";
-    } else if(strlen(trim($username)) < 3) {
-        $msg = "Username must be atleast 3 characters!";
-        $msgClass = "danger";
-    } else if(strlen($password) < 6) {
-        $msg = "Password must be atleast 6 characters!";
-        $msgClass = "danger";
-    }
-    
-    else {
-
-    if($password != $password_confirmation) {
-        $msg = "Password and Confirm Password didn't match!";
-        $msgClass = "danger";
-        // echo '<script>alert("Didnt match");</script>';
-        // header("location: update_profile.php");
-    } else {
-        $password = md5(mysqli_real_escape_string($connection,$_POST['password']));
-
-        $query = "UPDATE login SET username = '$username', password = '$password' WHERE username ='$login_session'";
-
-        // $query = "SELECT login_id FROM login WHERE username = '$username' and password = '$password'";
-
-        $result = mysqli_query($connection,$query);
-
-        if(!$result) {
-            echo 'Failed';
-        } else {
-            $msg = "Profile Updated Successfully!";
-            $msgClass = "success";
+        $username = mysqli_real_escape_string($connection,$_POST['username']);
+        $password = $_POST['password']; 
+        $password_confirmation = $_POST['confirm_password'];
+        if(trim($username) == '') {
+            $msg = "Username can't be blank!";
+            $msgClass = "danger";
+        } else if(strlen(trim($username)) < 3) {
+            $msg = "Username must be atleast 3 characters!";
+            $msgClass = "danger";
+        } else if(strlen($password) < 6) {
+            $msg = "Password must be atleast 6 characters!";
+            $msgClass = "danger";
         }
+        else {
+            if($password != $password_confirmation) {
+                $msg = "Password and Confirm Password didn't match!";
+                $msgClass = "danger";
+            } else {
+                $password = md5(mysqli_real_escape_string($connection,$_POST['password']));
 
-        // $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      
-        //   $active = $row['active'];
-      
-        // $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-    //     if($count == 1) {
-    //     //  session_register("username");
-    //         $_SESSION['login_user'] = $username;
-    //         $_SESSION['success_message'] = "Welcome to CMS - GICCL";
-    //         header("location: dashboard.php");
-    //     } 
-    //   else {
-    //         $msg = "Invalid username/password combination";
-    //         $msgClass = "danger";
-    //     }
+                $query = "UPDATE login SET username = '$username', password = '$password' WHERE username ='$login_session'";
+
+                $result = mysqli_query($connection,$query);
+
+                if(!$result) {
+                    echo 'Query Update Profile Failed..!';
+                    die();
+                } else {
+                    $msg = "Profile Updated Successfully!";
+                    $msgClass = "success";
+                }
+
+            }
+        }
     }
-}
-}
 
     
 ?>

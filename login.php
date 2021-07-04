@@ -9,7 +9,6 @@
       // username and password sent from form 
       
       $username = mysqli_real_escape_string($connection,$_POST['username']);
-    //   $password = md5(filter_var($_POST["password"], FILTER_SANITIZE_STRING));
       $password = md5(mysqli_real_escape_string($connection,$_POST['password'])); 
       
       $query = "SELECT login_id FROM login WHERE username = '$username' and password = '$password'";
@@ -18,14 +17,11 @@
 
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       
-    //   $active = $row['active'];
-      
       $count = mysqli_num_rows($result);
       
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
-        //  session_register("username");
          $_SESSION['login_user'] = $username;
          $_SESSION['success_message'] = "Welcome to CMS - GICCL";
          header("location: dashboard.php");
