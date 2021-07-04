@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,13 +34,14 @@
                     <a class="dropdown-item" href="#">Hostel Management</a>
                     </div>
                 </li><!-- Dropdown ends -->
-                <li class="nav-item mr-5">
-                  <a class="nav-link" href="about.php">About</a>
-                </li>
-                <li class="nav-item mr-5">
-                  <a class="nav-link" href="contact.php">Contact</a>
-                </li>
-                
+                <?php if(!isset($_SESSION['login_user'])): ?>
+                  <li class="nav-item mr-5">
+                    <a class="nav-link" href="about.php">About</a>
+                  </li>
+                  <li class="nav-item mr-5">
+                    <a class="nav-link" href="contact.php">Contact</a>
+                  </li>
+                <?php endif ?>
                   <?php  if(!isset($_SESSION['login_user'])) { ?>
                     <li class="nav-item mr-5">
                     <a class="nav-link" href="login.php">Login</a>  
@@ -52,7 +52,8 @@
                     Settings
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="dashboard.php">Profile</a>
+                    <a class="dropdown-item" href="update_profile.php">Update Profile</a>
                     <a class="dropdown-item" href="logout.php">Logout</a>
                     </div>
                     </li><!-- Dropdown ends -->

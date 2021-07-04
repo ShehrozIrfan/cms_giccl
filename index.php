@@ -1,3 +1,4 @@
+<?php include 'session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +15,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+
     <!-- header -->
-    <?php include 'header.php' ?> <!-- header ends -->
-    <?php 
-      if (isset($_SESSION['flash'])) {
-        echo $_SESSION['flash'];
-        unset($_SESSION['flash']);
-     }
-    ?>
+    <?php include 'header.php' ?><!-- header ends -->
+    
     <!-- section parallax -->
-    <section>
+      <section>
         <div class="header_parallax parallax pd_top text-center">
             <div class="container">
                 <div class="header_parallax_text">

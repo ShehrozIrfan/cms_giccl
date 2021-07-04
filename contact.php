@@ -1,3 +1,10 @@
+<?php include 'session.php' ?>
+<?php 
+if(isset($_SESSION['login_user'])) 
+{ 
+  header("location: index.php"); 
+} 
+?>
 <?php 
 
 $msg = '';
@@ -27,7 +34,7 @@ if(isset($_POST['contact'])) {
 
             //Email headers
             $headers = "MIME-Version: 1.0" . "\r\n";
-            $header .= "Content-type: text/html; charset= UTF-8" . "\r\n";
+            $headers .= "Content-type: text/html; charset= UTF-8" . "\r\n";
 
             //Additional headers
             $headers .= "From: " . $name . "<" . $email . ">" . "\r\n";
@@ -72,6 +79,7 @@ if(isset($_POST['contact'])) {
     <!-- header -->
     <?php include 'header.php' ?><!-- header ends -->
 
+    
     <!-- contact section -->
     <section id="contact" class="pd_top">
         <div class="container">

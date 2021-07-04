@@ -9,11 +9,4 @@
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
    
    $login_session = $row['username'];
-   
-   if(!isset($_SESSION['login_user'])){
-      $_SESSION['message'] = "Invalid Username/Password combination";
-      header("location: login.php");
-      die();
-      exit();
-   }
 ?>

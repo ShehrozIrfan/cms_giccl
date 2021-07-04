@@ -15,7 +15,7 @@ if(isset($_POST['login'])) {
     if(!$result) {
         die("Query Failed .. !" . mysqli_error($connection));
     } else {
-       echo 'error 405';
+       echo 'Success';
     }
     
 }

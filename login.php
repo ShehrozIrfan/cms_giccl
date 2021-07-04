@@ -2,12 +2,15 @@
    include("connection.php");
    session_start();
    
+   $msg = '';
+   $msgClass = '';
+
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
       $username = mysqli_real_escape_string($connection,$_POST['username']);
     //   $password = md5(filter_var($_POST["password"], FILTER_SANITIZE_STRING));
-    $password = md5(mysqli_real_escape_string($connection,$_POST['password'])); 
+      $password = md5(mysqli_real_escape_string($connection,$_POST['password'])); 
       
       $query = "SELECT login_id FROM login WHERE username = '$username' and password = '$password'";
 
@@ -26,8 +29,10 @@
          $_SESSION['login_user'] = $username;
          $_SESSION['success_message'] = "Welcome to CMS - GICCL";
          header("location: dashboard.php");
-      } else {
-         $_SESSION['error_message'] = "Invalid Email or Password combination";
+      } 
+      else {
+         $msg = "Invalid username/password combination";
+         $msgClass = "danger";
       }
    }
 ?>
@@ -58,14 +63,14 @@
     <section id="contact" class="pd_top">
         <div class="container">
             <h2 class="text-center font-weight-bold mt-3 mb-3">Admin Login</h2>
-            <?php if (isset($_SESSION['error_message'])) { ?>
-                <div class="alert alert-danger text-center col-md-6 mx-auto mt-3 mb-3">
-                    <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
-                        ×
-                    </button>
-                    <?php echo $_SESSION['error_message']; ?>
-                </div>
-            <?php } ?>
+            <?php if ($msg != ''): ?>
+              <div class="alert alert-<?php echo $msgClass ?> text-center col-md-6 mx-auto mt-3 mb-3">
+                <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                          ×
+                </button>
+                <?php echo $msg ?>
+              </div>
+            <?php endif ?>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="login.php" method="post">
