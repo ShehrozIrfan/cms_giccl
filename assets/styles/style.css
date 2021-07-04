@@ -254,6 +254,10 @@ body {
 }
 
 
+/* ===================================================== */
+/* ================ Show News PAGE ========================= */
+
+
 /* Media Queries - for mobile responsive */
 @media (max-width: 768px) {
     .box_ms h4 {

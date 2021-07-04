@@ -92,7 +92,7 @@
                           <input type="password" name="confirm_password" class="form-control" id="password" placeholder="Confirm Password" required>
                         </div>
                         <div class="form-group">
-                        <button type="submit" name="update" class="btn btn-dark">Change</button>
+                        <button type="submit" name="update" class="btn btn-primary">Change</button>
                       </form>
                 </div>
             </div>

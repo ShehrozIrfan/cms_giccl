@@ -109,7 +109,7 @@
           </div>
         </div>
         <div class="text-center mt-3 mb-3">
-          <a href="#" class="btn btn-dark btn-sm">Click Here To Read More</a>
+          <a href="./show_news.php" class="btn btn-dark btn-sm">Click Here To Read More</a>
         </div>
       </div>
     </section><!-- section news ends -->

@@ -87,7 +87,7 @@ if(isset($_POST['contact'])) {
             <div class="row justify-content-center">
                 <div class="col-md-6">
                 <?php if($msg != '') { ?>
-                    <div class="alert <?php echo $msgClass ?> text-center alert-dismissible">
+                    <div class="alert alert-<?php echo $msgClass ?> text-center alert-dismissible">
                     <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
                         ×
                     </button>

@@ -49,6 +49,15 @@
                   <?php } else {  ?>
                     <li class="nav-item dropdown mr-5">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    News
+                    </a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="create_news.php">Create News</a>
+                    <a class="dropdown-item" href="show_news.php">Show All News</a>
+                    </div>
+                    </li><!-- Dropdown ends -->
+                    <li class="nav-item dropdown mr-5">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     Settings
                     </a>
                     <div class="dropdown-menu">
