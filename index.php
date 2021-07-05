@@ -88,28 +88,12 @@
     <section id="s_news">
       <h2 class="text-center">News &amp; Updates</h2>
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-md-6">
-            <div class="news">
-              <span class="news_date">Posted on 22 Jun 2021</span>
-              <span class="news_title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eius laudantium ad libero accusamus nisi quibusdam eveniet officiis deserunt, explicabo illo ea placeat doloremque veritatis unde quam tempora ipsam. Dolor vel tenetur beatae quasi similique in, quam magni repellendus. Deserunt porro repellendus nesciunt consequuntur debitis perspiciatis? Atque sapiente minus reprehenderit.</span>
-              <div class="text-center mt-2 mb-2">
-                <a href="#" class="btn btn-warning btn-sm">Read More</a>
-              </div>
+            
+            <div class="text-center mt-3 mb-3">
+              <a href="./show_news.php" class="btn btn-dark btn-block">Click Here To Read News</a>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="news">
-              <span class="news_date">Posted on 22 Jun 2021</span>
-              <span class="news_title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eius laudantium ad libero accusamus nisi quibusdam eveniet officiis deserunt, explicabo illo ea placeat doloremque veritatis unde quam tempora ipsam. Dolor vel tenetur beatae quasi similique in, quam magni repellendus. Deserunt porro repellendus nesciunt consequuntur debitis perspiciatis? Atque sapiente minus reprehenderit.</span>
-              <div class="text-center mt-2 mb-2">
-                <a href="#" class="btn btn-warning btn-sm">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="text-center mt-3 mb-3">
-          <a href="./show_news.php" class="btn btn-dark btn-sm">Click Here To Read More</a>
         </div>
       </div>
     </section><!-- section news ends -->
