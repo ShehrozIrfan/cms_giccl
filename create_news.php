@@ -44,6 +44,62 @@ if(isset($_POST['create'])) {
 }
 
 ?>
+
+<?php 
+
+if(isset($_GET['edit'])) {
+
+    $id = $_GET['edit'];
+
+    $title;
+    $description;
+
+    $query = "SELECT * FROM news WHERE id = $id";
+
+    $result = mysqli_query($connection, $query);
+
+    if(!$result) {
+        die("Query Failed .. !" . mysqli_error($connection));
+    } else {
+        
+        while($row = mysqli_fetch_array($result)){
+            $title = $row['title'];
+            $description = $row['description'];
+
+        }
+    }
+}
+
+?>
+
+<?php 
+
+if(isset($_POST['update'])) {
+
+    $id = $_GET['edit'];    
+    
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+
+    $query = "UPDATE news SET ";
+    $query .= "title = '$title', ";
+    $query .= "description = '$description' ";
+    $query .= "WHERE id = $id";
+    
+    $result = mysqli_query($connection, $query);
+    
+    if(!$result) {
+        die("Query Failed. " .  mysqli_error($connection));
+    } else {
+        $msg = "News Updated successfully!";
+        $msgClass = "warning";
+        $title = '';
+        $description = '';
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,13 +136,17 @@ if(isset($_POST['create'])) {
                     <form action="" method="post">
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" value="<?php echo isset($_POST['title'])? $title : ''; ?>" required>
+                            <textarea type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required><?php if(isset($_GET['edit'])) { echo $title; } ?></textarea>
                           </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea class="form-control" id="description" name="description" placeholder="Enter Description" required><?php echo isset($_POST['description'])? $description : ''; ?></textarea>
+                            <textarea class="form-control" id="description" name="description" placeholder="Enter Description" required><?php if(isset($_GET['edit'])) { echo $description; } ?></textarea>
                           </div>
+                        <?php if(isset($_GET['edit'])): ?>
+                        <button type="submit" name="update" class="btn btn-warning">Update News</button>
+                        <?php else: ?>
                         <button type="submit" name="create" class="btn btn-primary">Add News</button>
+                        <?php endif ?>
                       </form>
                 </div>
             </div>

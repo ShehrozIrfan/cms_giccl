@@ -39,6 +39,21 @@ if(isset($_GET['delete'])) {
 
 ?>
 
+<?php 
+
+//Update news
+
+$updated = false;
+
+if(isset($_GET['edit'])) {
+
+    $updated = true;
+    $id = $_GET['edit'];
+    
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,6 +107,7 @@ if(isset($_GET['delete'])) {
                         <tr>
                             <td>
                                 <a href="show_news.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="create_news.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
                             </td>
                         </tr>
                     <?php endif ?>    
