@@ -26,7 +26,9 @@
                 <div class="header_parallax_text">
                   <div>
                     <h2 class="">Welcome to College Management System - GICCL</h2>
-                  <a href="" class="btn btn-dark">Read more</a>
+                    <?php if(!isset($_SESSION['login_user'])): ?>
+                      <a href="about.php" class="btn btn-dark">Read more</a>
+                    <?php endif ?>
                   </div>
                 </div>
             </div>
