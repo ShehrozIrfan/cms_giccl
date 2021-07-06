@@ -31,7 +31,7 @@ if(isset($_POST['create'])) {
             if(!$result) {
                 die("Query Failed .. !" . mysqli_error($connection));
             }else {
-                $msg = "News added successfully!";
+                $msg = "News posted successfully!";
                 $msgClass = "success";
                 $title = '';
                 $description = '';
@@ -122,7 +122,11 @@ if(isset($_POST['update'])) {
     <!-- section create news -->
     <section id="create_news" class="pd_top mb-5">
     <div class="container">
-            <h2 class="text-center font-weight-bold mt-3 mb-3">Create News</h2>
+            <?php if(isset($_GET['edit'])){ ?>
+            <h2 class="text-center font-weight-bold mt-3 mb-3">Update News</h2>
+            <?php } else {?>
+            <h2 class="text-center font-weight-bold mt-3 mb-3">Post News</h2>
+            <?php } ?>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                 <?php if($msg != '') { ?>
@@ -144,8 +148,10 @@ if(isset($_POST['update'])) {
                           </div>
                         <?php if(isset($_GET['edit'])): ?>
                         <button type="submit" name="update" class="btn btn-warning">Update News</button>
+                        <a href="show_news.php" class="btn btn-secondary ml-3">Back</a>
                         <?php else: ?>
-                        <button type="submit" name="create" class="btn btn-primary">Add News</button>
+                        <button type="submit" name="create" class="btn btn-primary">Post News</button>
+                        <a href="show_news.php" class="btn btn-secondary ml-3">Show News</a>
                         <?php endif ?>
                       </form>
                 </div>

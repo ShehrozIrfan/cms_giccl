@@ -52,8 +52,8 @@
                     News
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="create_news.php">Create News</a>
-                    <a class="dropdown-item" href="show_news.php">Show All News</a>
+                    <a class="dropdown-item" href="create_news.php">Post News</a>
+                    <a class="dropdown-item" href="show_news.php">Show News</a>
                     </div>
                     </li><!-- Dropdown ends -->
                     <li class="nav-item dropdown mr-5">
@@ -61,7 +61,7 @@
                     Settings
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="dashboard.php">Profile</a>
+                    <a class="dropdown-item" href="dashboard.php">Admin's Profile</a>
                     <a class="dropdown-item" href="update_profile.php">Update Profile</a>
                     <a class="dropdown-item" href="logout.php">Logout</a>
                     </div>

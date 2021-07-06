@@ -29,7 +29,14 @@ if(!isset($_SESSION['login_user'])){
     <div class="pd_top"></div>
     <div class="container">
     
-    <h1>Welcome <?php echo $login_session; ?></h1> 
+    <div class="row justify-content-center mt-5 mb-3">
+        <div class="col-md-12 text-center">
+            <div class="jumbotron">
+                <h1>Welcome to CMS</h1>
+                <p>This is the welcome page for CMS</p>
+            </div>
+        </div>
+    </div> 
 
     </div>
       

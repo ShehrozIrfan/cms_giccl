@@ -78,8 +78,6 @@ if(isset($_POST['contact'])) {
 <body>
     <!-- header -->
     <?php include 'header.php' ?><!-- header ends -->
-
-    
     <!-- contact section -->
     <section id="contact" class="pd_top">
         <div class="container">
