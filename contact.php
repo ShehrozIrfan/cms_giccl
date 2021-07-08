@@ -6,18 +6,14 @@ if(isset($_SESSION['login_user']))
 } 
 ?>
 <?php 
-
 $msg = '';
 $msgClass = '';
-
 if(isset($_POST['contact'])) {
     //getting values
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-
     if(!empty(trim($name)) && !empty(trim($email)) && !empty(trim($message))) {
-
         //checking for valid email
         if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
             $msg = "Please use a valid email";
@@ -31,14 +27,11 @@ if(isset($_POST['contact'])) {
                      <h4>Email: </h4><p>' . $email . '</p>
                      <h4>Message: </h4><p>' . $message . '</p>
             ';
-
             //Email headers
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type: text/html; charset= UTF-8" . "\r\n";
-
             //Additional headers
             $headers .= "From: " . $name . "<" . $email . ">" . "\r\n";
-
             if(mail($toEmail, $subject, $body, $headers)) {
                 $msg = "Your message has been sent";
                 $msgClass = "alert-success";

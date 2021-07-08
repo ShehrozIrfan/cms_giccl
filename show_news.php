@@ -1,14 +1,9 @@
 <?php include 'session.php' ?>
-
 <?php
-
-//Showing all news
-
+    //Showing all news
     $msg = '';
     $msgClass = '';
-
     $query = "SELECT * FROM news ORDER BY id DESC";
-
     $result = mysqli_query($connection, $query);
     if(!$result) {
         die("Query Failed .. !" . mysqli_error($connection));
@@ -16,19 +11,12 @@
         echo "News captured successfully!";
     }
 ?>
-
 <?php 
-
 //Delete news
-
 if(isset($_GET['delete'])) {
-
-
     $id = $_GET['delete'];
     $query_d = "DELETE FROM news WHERE id = $id";
-    
     $result_d = mysqli_query($connection, $query_d);
-    
     if(!$result_d) {
         die("Query Failed." . mysqli_error($connection));
     } else {
@@ -36,25 +24,15 @@ if(isset($_GET['delete'])) {
         $msgClass = "success";
     }
 }
-
 ?>
-
 <?php 
-
 //Update news
-
 $updated = false;
-
 if(isset($_GET['edit'])) {
-
     $updated = true;
     $id = $_GET['edit'];
-    
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,9 +66,6 @@ if(isset($_GET['edit'])) {
                     <?php echo $msg ?>
                     </div>
                 <?php } ?>
-                
-                
-                
                 <?php 
                 while ($row = mysqli_fetch_array($result)) { ?>
                    <table class="table table-bordered">
@@ -113,14 +88,11 @@ if(isset($_GET['edit'])) {
                     <?php endif ?>    
                    </table>                
                 
-                <?php } ?>
-
-                
+                <?php } ?>                
                 </div>
             </div>
         </div>
     </section><!-- section create news ends -->
-
 
     <!-- footer -->
     <?php include 'footer.php' ?><!-- footer ends -->

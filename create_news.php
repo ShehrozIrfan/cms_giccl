@@ -6,17 +6,12 @@ if(!isset($_SESSION['login_user']))
 } 
 ?>
 <?php
-
 $msg = '';
 $msgClass = '';
-
 if(isset($_POST['create'])) {
-    echo "Working";
-
     $title = $_POST['title'];
     $description = $_POST['description'];
     $date = date('Y-m-d');
-
     if(!empty(trim($title)) && !empty(trim($description))) {
         if(strlen($title) < 10) {
             $msg = "Title must be atleast 10 characters!";
@@ -42,52 +37,34 @@ if(isset($_POST['create'])) {
         $msgClass = "danger";
     }
 }
-
 ?>
-
 <?php 
-
 if(isset($_GET['edit'])) {
-
     $id = $_GET['edit'];
-
     $title;
     $description;
-
     $query = "SELECT * FROM news WHERE id = $id";
-
     $result = mysqli_query($connection, $query);
-
     if(!$result) {
         die("Query Failed .. !" . mysqli_error($connection));
     } else {
-        
         while($row = mysqli_fetch_array($result)){
             $title = $row['title'];
             $description = $row['description'];
-
         }
     }
 }
-
 ?>
-
 <?php 
-
 if(isset($_POST['update'])) {
-
     $id = $_GET['edit'];    
-    
     $title = $_POST['title'];
     $description = $_POST['description'];
-
     $query = "UPDATE news SET ";
     $query .= "title = '$title', ";
     $query .= "description = '$description' ";
     $query .= "WHERE id = $id";
-    
     $result = mysqli_query($connection, $query);
-    
     if(!$result) {
         die("Query Failed. " .  mysqli_error($connection));
     } else {
@@ -97,9 +74,7 @@ if(isset($_POST['update'])) {
         $description = '';
     }
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

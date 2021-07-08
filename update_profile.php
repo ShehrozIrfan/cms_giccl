@@ -1,4 +1,5 @@
-<?php include 'session.php' ?>
+<?php require_once 'session.php' ?>
+<?php require_once 'global_update_profile.php' ?>
 <?php
    $msg = '';
    $msgClass = '';
@@ -23,7 +24,7 @@
             } else {
                 $password = md5(mysqli_real_escape_string($connection,$_POST['password']));
 
-                $query = "UPDATE login SET username = '$username', password = '$password' WHERE username ='$login_session'";
+                $query = "UPDATE login SET username = '$username', password = '$password' WHERE login_id ='$id'";
 
                 $result = mysqli_query($connection,$query);
 
@@ -38,10 +39,7 @@
             }
         }
     }
-
-    
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,13 +1,10 @@
 <?php
    include("connection.php");
    session_start();
-   
    $msg = '';
    $msgClass = '';
-
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
-      
       $username = mysqli_real_escape_string($connection,$_POST['username']);
       $password = md5(mysqli_real_escape_string($connection,$_POST['password'])); 
       
@@ -38,9 +35,7 @@
 if(isset($_SESSION['login_user'])) {
   header("location: dashboard.php");
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

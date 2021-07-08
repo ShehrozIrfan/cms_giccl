@@ -5,7 +5,6 @@ if(!isset($_SESSION['login_user'])){
     die();
  }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

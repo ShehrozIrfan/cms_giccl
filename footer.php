@@ -9,7 +9,6 @@
     
 </head>
 <body>
-    
     <!-- main footer-->
     <section id="main_footer">
       <div class="container">
@@ -43,7 +42,6 @@
     </section><!-- main footer ends -->
 
     <!-- simple footer -->
- 
     <footer class="s_f">
       <div class="container">
         <div class="row">

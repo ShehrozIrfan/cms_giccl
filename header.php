@@ -72,7 +72,5 @@
             </div>  
           </nav><!-- navbar ends -->
     </header><!-- header ends -->
-
-    
 </body>
 </html>
