@@ -67,7 +67,7 @@
         <div class="container">
             <h2 class="text-center font-weight-bold mt-3 mb-3">Update Login Details</h2>
             <?php if ($msg != ''): ?>
-              <div class="alert alert-<?php echo $msgClass ?> text-center col-md-6 mx-auto mt-3 mb-3">
+              <div class="alert <?php echo $msgClass ?> text-center col-md-6 mx-auto mt-3 mb-3">
                 <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
                           ×
                 </button>
