@@ -4,25 +4,25 @@
    $msg = '';
    $msgClass = '';
    if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
+      // username and password sent from form
       $username = mysqli_real_escape_string($connection,$_POST['username']);
-      $password = md5(mysqli_real_escape_string($connection,$_POST['password'])); 
-      
+      $password = md5(mysqli_real_escape_string($connection,$_POST['password']));
+
       $query = "SELECT login_id FROM login WHERE username = '$username' and password = '$password'";
 
       $result = mysqli_query($connection,$query);
 
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      
+
       $count = mysqli_num_rows($result);
-      
+
       // If result matched $myusername and $mypassword, table row must be 1 row
-		
+
       if($count == 1) {
          $_SESSION['login_user'] = $username;
          $_SESSION['success_message'] = "Welcome to CMS - GICCL";
          header("location: dashboard.php");
-      } 
+      }
       else {
          $msg = "Invalid username/password combination";
          $msgClass = "danger";
@@ -88,7 +88,7 @@ if(isset($_SESSION['login_user'])) {
             </div>
         </div>
     </section><!-- contact section ends -->
-    
+
     <!-- footer -->
     <?php include 'footer.php' ?><!-- footer ends -->
 

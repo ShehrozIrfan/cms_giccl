@@ -44,7 +44,7 @@
                 <?php endif ?>
                   <?php  if(!isset($_SESSION['login_user'])) { ?>
                     <li class="nav-item mr-5">
-                    <a class="nav-link" href="login.php">Login</a>  
+                    <a class="nav-link" href="login.php">Login</a>
                     </li>
                   <?php } else {  ?>
                     <li class="nav-item dropdown mr-5">
@@ -67,9 +67,9 @@
                     </div>
                     </li><!-- Dropdown ends -->
                   <?php } ?>
-                     
+
               </ul>
-            </div>  
+            </div>
           </nav><!-- navbar ends -->
     </header><!-- header ends -->
 </body>
