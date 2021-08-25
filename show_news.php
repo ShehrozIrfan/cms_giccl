@@ -68,7 +68,6 @@ if(isset($_GET['edit'])) {
                 <?php } ?>
                 <?php
                 while ($row = mysqli_fetch_array($result)) { ?>
-                <?php print_r($row['filename']);     ?>
                    <table class="table table-bordered">
                    <tr class="thead-dark">
                         <th><span class="font-weight-bold">Posted on: </span><span class="small"><?php echo $row['date']; ?></span></th>
@@ -85,8 +84,8 @@ if(isset($_GET['edit'])) {
                     <?php if(isset($_SESSION['login_user'])): ?>
                         <tr>
                             <td>
-                                <a href="show_news.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
-                                <a href="create_news.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="show_news.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash-o mr-2"></i>Delete</a>
+                                <a href="create_news.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil mr-2"></i>Edit</a>
                             </td>
                         </tr>
                     <?php endif ?>

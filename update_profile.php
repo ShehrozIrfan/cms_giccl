@@ -5,7 +5,7 @@
    $msgClass = '';
    if(isset($_POST['update'])) {
         $username = mysqli_real_escape_string($connection,$_POST['username']);
-        $password = $_POST['password']; 
+        $password = $_POST['password'];
         $password_confirmation = $_POST['confirm_password'];
         if(trim($username) == '') {
             $msg = "Username can't be blank!";
@@ -96,7 +96,7 @@
             </div>
         </div>
     </section><!-- contact section ends -->
-    
+
     <!-- footer -->
     <?php include 'footer.php' ?><!-- footer ends -->
 
