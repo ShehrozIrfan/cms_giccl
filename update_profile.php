@@ -90,7 +90,7 @@
                           <input type="password" name="confirm_password" class="form-control" id="password" placeholder="Confirm Password" required>
                         </div>
                         <div class="form-group">
-                        <button type="submit" name="update" class="btn btn-primary">Change</button>
+                        <button type="submit" name="update" class="btn btn-primary"><i class="fa fa-pencil-square-o mr-2"></i>Change</button>
                       </form>
                 </div>
             </div>
