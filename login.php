@@ -82,7 +82,7 @@ if(isset($_SESSION['login_user'])) {
                           <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required>
                         </div>
                         <div class="form-group">
-                        <button type="submit" name="login" class="btn btn-dark">Login</button>
+                        <button type="submit" name="login" class="btn btn-dark btn-block">Login</button>
                       </form>
                 </div>
             </div>

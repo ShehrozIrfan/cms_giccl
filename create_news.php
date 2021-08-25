@@ -143,8 +143,8 @@ if(isset($_POST['update'])) {
                         <button type="submit" name="update" class="btn btn-warning">Update News</button>
                         <a href="show_news.php" class="btn btn-secondary ml-3">Back</a>
                         <?php else: ?>
-                        <button type="submit" name="create" class="btn btn-primary"><i class="fa fa-plus-circle mr-2"></i>Post News</button>
-                        <a href="show_news.php" class="btn btn-secondary ml-3"><i class="fa fa-eye mr-2"></i>Show News</a>
+                        <button type="submit" name="create" class="btn btn-primary btn-block"><i class="fa fa-plus-circle mr-2"></i>Post News</button>
+                        <a href="show_news.php" class="btn btn-secondary btn-block"><i class="fa fa-eye mr-2"></i>Show News</a>
                         <?php endif ?>
                       </form>
                 </div>

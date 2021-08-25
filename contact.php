@@ -1,11 +1,11 @@
 <?php include 'session.php' ?>
-<?php 
-if(isset($_SESSION['login_user'])) 
-{ 
-  header("location: index.php"); 
-} 
+<?php
+if(isset($_SESSION['login_user']))
+{
+  header("location: index.php");
+}
 ?>
-<?php 
+<?php
 $msg = '';
 $msgClass = '';
 if(isset($_POST['contact'])) {
@@ -98,7 +98,7 @@ if(isset($_POST['contact'])) {
                             <label for="message">Message</label>
                             <textarea class="form-control" id="message" name="message" placeholder="Enter your message" required><?php echo isset($_POST['message'])? $message : ''; ?></textarea>
                           </div>
-                        <button type="submit" name="contact" class="btn btn-dark">Send Message</button>
+                        <button type="submit" name="contact" class="btn btn-dark btn-block">Send Message</button>
                       </form>
                 </div>
             </div>
@@ -116,7 +116,7 @@ if(isset($_POST['contact'])) {
             </div>
         </div>
     </section><!-- contact section ends -->
-    
+
     <?php include 'footer.php' ?>
     <script src="./assets/js/app.js"></script>
 </body>
