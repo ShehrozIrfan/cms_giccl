@@ -1,35 +1,49 @@
 <?php include 'session.php' ?>
-<?php 
-if(!isset($_SESSION['login_user'])) 
-{ 
-  header("location: index.php"); 
-} 
+
+<?php
+error_reporting(0);
+?>
+<?php
+if(!isset($_SESSION['login_user']))
+{
+  header("location: index.php");
+}
 ?>
 <?php
 $msg = '';
 $msgClass = '';
 if(isset($_POST['create'])) {
+
+    $filename = $_FILES["uploadImage"]["name"];
+    $tempname = $_FILES["uploadImage"]["tmp_name"];
+    $folder = "assets/news_images/".$filename;
+    echo $folder . "<br/>";
+    echo $tempname . "<br/>";
     $title = $_POST['title'];
     $description = $_POST['description'];
     $date = date('Y-m-d');
+
     if(!empty(trim($title)) && !empty(trim($description))) {
         if(strlen($title) < 10) {
             $msg = "Title must be atleast 10 characters!";
             $msgClass = "danger";
-        } 
+        }
         else if(strlen($description) < 15) {
             $msg = "Description must be atleast 15 characters!";
             $msgClass = "danger";
         } else {
-            $query = "INSERT INTO news (title, description, date) VALUES('$title', '$description', '$date')";
+            $query = "INSERT INTO news (filename, title, description, date) VALUES('$filename','$title', '$description', '$date')";
             $result = mysqli_query($connection, $query);
             if(!$result) {
                 die("Query Failed .. !" . mysqli_error($connection));
             }else {
-                $msg = "News posted successfully!";
-                $msgClass = "success";
-                $title = '';
-                $description = '';
+                // Now let's move the uploaded image into the folder: image
+                if (move_uploaded_file($tempname, $folder))  {
+                    $msg = "News posted successfully!";
+                    $msgClass = "success";
+                    $title = '';
+                    $description = '';
+                }
             }
         }
     } else {
@@ -38,7 +52,7 @@ if(isset($_POST['create'])) {
     }
 }
 ?>
-<?php 
+<?php
 if(isset($_GET['edit'])) {
     $id = $_GET['edit'];
     $title;
@@ -55,9 +69,9 @@ if(isset($_GET['edit'])) {
     }
 }
 ?>
-<?php 
+<?php
 if(isset($_POST['update'])) {
-    $id = $_GET['edit'];    
+    $id = $_GET['edit'];
     $title = $_POST['title'];
     $description = $_POST['description'];
     $query = "UPDATE news SET ";
@@ -92,7 +106,7 @@ if(isset($_POST['update'])) {
 </head>
 <body>
     <!-- header -->
-    <?php include 'header.php' ?> <!-- header ends -->
+    <!-- <?php #include 'header.php' ?> header ends -->
 
     <!-- section create news -->
     <section id="create_news" class="pd_top mb-5">
@@ -112,7 +126,11 @@ if(isset($_POST['update'])) {
                     <?php echo $msg ?>
                     </div>
                 <?php } ?>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="image">Upload Image</label>
+                            <input type="file" name="uploadImage" value="" class="form-control" required />
+                        </div>
                         <div class="form-group">
                             <label for="title">Title</label>
                             <textarea type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required><?php if(isset($_GET['edit'])) { echo $title; } ?></textarea>

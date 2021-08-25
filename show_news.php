@@ -11,7 +11,7 @@
         echo "News captured successfully!";
     }
 ?>
-<?php 
+<?php
 //Delete news
 if(isset($_GET['delete'])) {
     $id = $_GET['delete'];
@@ -25,7 +25,7 @@ if(isset($_GET['delete'])) {
     }
 }
 ?>
-<?php 
+<?php
 //Update news
 $updated = false;
 if(isset($_GET['edit'])) {
@@ -66,11 +66,15 @@ if(isset($_GET['edit'])) {
                     <?php echo $msg ?>
                     </div>
                 <?php } ?>
-                <?php 
+                <?php
                 while ($row = mysqli_fetch_array($result)) { ?>
+                <?php print_r($row['filename']);     ?>
                    <table class="table table-bordered">
                    <tr class="thead-dark">
                         <th><span class="font-weight-bold">Posted on: </span><span class="small"><?php echo $row['date']; ?></span></th>
+                    </tr>
+                    <tr>
+                        <td><img src="./upload_image/images/<?php echo $row['filename']; ?>"></td>
                     </tr>
                     <tr>
                         <td><?php echo $row['title']; ?></td>
@@ -85,10 +89,10 @@ if(isset($_GET['edit'])) {
                                 <a href="create_news.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
                             </td>
                         </tr>
-                    <?php endif ?>    
-                   </table>                
-                
-                <?php } ?>                
+                    <?php endif ?>
+                   </table>
+
+                <?php } ?>
                 </div>
             </div>
         </div>
