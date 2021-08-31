@@ -17,8 +17,6 @@ if(isset($_POST['create'])) {
     $filename = $_FILES["uploadImage"]["name"];
     $tempname = $_FILES["uploadImage"]["tmp_name"];
     $folder = "assets/news_images/".$filename;
-    echo $folder . "<br/>";
-    echo $tempname . "<br/>";
     $title = $_POST['title'];
     $description = $_POST['description'];
     $date = date('Y-m-d');
@@ -55,6 +53,7 @@ if(isset($_POST['create'])) {
 <?php
 if(isset($_GET['edit'])) {
     $id = $_GET['edit'];
+    $filename;
     $title;
     $description;
     $query = "SELECT * FROM news WHERE id = $id";
@@ -65,6 +64,7 @@ if(isset($_GET['edit'])) {
         while($row = mysqli_fetch_array($result)){
             $title = $row['title'];
             $description = $row['description'];
+            $filename = $row['filename'];
         }
     }
 }
@@ -72,9 +72,13 @@ if(isset($_GET['edit'])) {
 <?php
 if(isset($_POST['update'])) {
     $id = $_GET['edit'];
+    $filename = $_FILES["uploadImage"]["name"];
+    $tempname = $_FILES["uploadImage"]["tmp_name"];
+    $folder = "assets/news_images/".$filename;
     $title = $_POST['title'];
     $description = $_POST['description'];
     $query = "UPDATE news SET ";
+    $query .= "filename = '$filename', ";
     $query .= "title = '$title', ";
     $query .= "description = '$description' ";
     $query .= "WHERE id = $id";
@@ -82,10 +86,12 @@ if(isset($_POST['update'])) {
     if(!$result) {
         die("Query Failed. " .  mysqli_error($connection));
     } else {
-        $msg = "News Updated successfully!";
-        $msgClass = "warning";
-        $title = '';
-        $description = '';
+        if (move_uploaded_file($tempname, $folder))  {
+            $msg = "News Updated successfully!";
+            $msgClass = "warning";
+            $title = '';
+            $description = '';
+        }
     }
 }
 ?>
